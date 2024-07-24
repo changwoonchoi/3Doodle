@@ -71,6 +71,12 @@ python viewer.py --config logs/sanity_check/bezier/mic_0/config.yaml -ck logs/sa
 python viewer.py --config logs/sanity_check/all/snowman_0/config.yaml --stages all -ck logs/sanity_check/all/snowman_0/best.ckpt
 ```
 
+
+https://github.com/user-attachments/assets/8c9120c3-7d7b-4544-9207-ba1775d2e651
+
+
+
+
 ## Acknowledgements
 We thank our friend [Clément Jambon](https://clementjambon.github.io/) for helping with the implementation of the interactive viewer. We would like to clarify that the source codes related to the interactive viewer are borrowed from his work.
 
