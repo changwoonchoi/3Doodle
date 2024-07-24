@@ -48,6 +48,7 @@ pip install -e .
 You can download our dataset and SfM point clouds from this [link](https://drive.google.com/drive/folders/1tTVVd78TAJIT6GJcfrfKIWN_EyR92FmZ).
 
 
+## Train
 ```
 # Bézier curve only
 python train.py --config configs/nerf_synthetic/mic.yaml -ep sanity_check -eg bezier -en mic
