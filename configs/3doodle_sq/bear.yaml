@@ -1,0 +1,51 @@
+data:
+  type: dataset.ours.Synthetic
+  params:
+    projection: PERSP
+    root: ./data/3doodle
+    scene: bigbear
+    near: 2.
+    far: 6.
+    white_bkgd: True
+    init_points: True
+    sfm_params:
+      voxel_size: 0.02
+      filter_fn: radius
+      filter_params: [10, 0.2]
+      filter_again: True
+      filter_ratio: 0.03
+
+method:
+  text: teddy bear
+
+  use_contour: True
+  use_viewdirs: True
+  render_lr: 1.0e-3
+  lr: 1.0e-3
+
+  eval_gap: 25
+
+  sq_pre_iters: 15000
+  sq_freeze: True
+
+  curve_params:
+    proj_mode: persp
+    proj_scale: 1.0
+    blender: True
+    use_sfm: False
+    
+    gap: 0.01
+    center: [0.0, 0.0, 0.1]
+    rand_mode: bbox
+    upside: True
+    boundaries: [0.8, 0.8, 1.0]
+    
+    num_strokes: 16
+
+  sq_params:
+    rendering_type: contour_3doodle_adaptive
+    n_units: 11
+
+    network_params:
+      alpha: [0.1, 0.4]
+      epsilon: [0.8, 1.2]

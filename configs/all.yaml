@@ -1,0 +1,97 @@
+data:
+  type: dataset.ours.Synthetic
+  params:
+    root: ./data/ours/synthetic
+    white_bkgd: True
+    init_points: True
+    sfm_params:
+      voxel_size: 0.02
+      filter_fn: radius
+      filter_params: [10, 0.2]
+      filter_again: False
+      filter_ratio: 0.03
+
+method:
+  plot_freq: 1000
+  save_freq: 1000
+  desc_freq: 5
+
+  save_init: False
+  save_trains: False
+
+  batch_size: 1
+  num_workers: 4
+  shuffle: True
+  worker_init: True
+
+  max_iters: 50000
+  num_stage: 1
+  lr: 1.0e-3
+  color_lr: 1.0e-3
+  use_contour: True
+  render_lr: 1.0e-3
+  
+  sq_pre_iters: 15000
+  sq_freeze: True
+  use_viewdirs: True
+
+  curve_params:
+    proj_mode: persp
+    proj_scale: 1.0
+    blender: True
+
+    use_sfm: True
+    stroke_width: 1.5
+    num_strokes: 16
+    num_segments: 1
+    pts_per_seg: 4
+    eps: 1.0e-8
+
+    optim_type: Default
+    num_stages: 1
+    add_noise: False
+    noise_thres: 0.5
+    color_thres: 0.0
+    pts_dist_thres: 0.015
+  
+  sq_params:
+    chunk: 32768
+    rendering_type: contour_3doodle_adaptive
+    adaptive_param_grad: False
+    
+    use_sfm: True
+    n_units: 1
+    
+    network_params:
+      alpha: [0.1, 0.4]
+      epsilon: [0.1, 1.5]
+      gamma: 5.
+      bias: 50.
+      sigma_scale: 5.
+      beta: 8.
+      gamma_range: [2., 7.]
+      bias_range: [10., 100]
+      scale_range: [30., 80.]
+
+  loss_params:
+    contour:
+      joint:
+        loss_type: LPIPS
+        size: 224
+        weight: 1.
+        robust: False
+    curve:
+      conv:
+        model_type: RN101
+        conv_loss_type: L2
+        fc_loss_type: Cos
+        num_augs: 4
+        affine: True
+        conv_weights: [0.0, 0.0, 1.0, 1.0, 0.0]
+        c_weight: 0.0
+        fc_weight: 1.0
+      joint:
+        loss_type: LPIPS
+        size: 224
+        weight: 0.01
+        robust: True

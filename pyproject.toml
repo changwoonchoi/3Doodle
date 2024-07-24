@@ -1,0 +1,18 @@
+[project]
+authors = [{ name = "Changwoon Choi", email = "changwoon.choi00@gmail.com" }]
+name = "doodle3d"
+version = "1.0"
+description = "3Doodle"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dynamic = ["dependencies"]
+
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

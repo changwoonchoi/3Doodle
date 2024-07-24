@@ -1,0 +1,23 @@
+data:
+  type: dataset.nerf.Synthetic
+  params:
+    root: ./data/nerf_synthetic
+    scene: hotdog
+    white_bkgd: True
+    init_points: True
+
+method:
+  text: hot dogs and sauce on the plate
+  
+  curve_params:
+    proj_mode: persp
+    proj_scale: 1.0
+    blender: True
+
+    gap: 0.01
+    center: [0.0, 0.0, 0.0]
+    rand_mode: bbox
+    upside: True
+    boundaries: [1.2, 1.2, 0.3]
+
+    num_strokes: 64

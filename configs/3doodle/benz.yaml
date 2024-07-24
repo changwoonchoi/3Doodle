@@ -1,0 +1,23 @@
+data:
+  type: dataset.ours.Synthetic
+  params:
+    projection: PERSP
+    root: ./data/ours/synthetic
+    scene: benz
+    white_bkgd: True
+
+method:
+  text: the white car
+  
+  curve_params:
+    proj_mode: persp
+    proj_scale: 1.0
+    blender: True
+
+    gap: 0.01
+    center: [0.0, 0.0, 0.0]
+    rand_mode: bbox
+    upside: True
+    boundaries: [0.2, 0.2, 0.8]
+
+    num_strokes: 48

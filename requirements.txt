@@ -1,0 +1,14 @@
+opencv-python
+numpy==1.24.4
+imageio==2.31.1
+typing
+tqdm
+PyYAML
+scikit-image==0.21
+cssutils==2.7.1
+rich==13.7.0
+chardet==5.2.0
+polyscope
+cuda-python
+cupy
+nerfacc

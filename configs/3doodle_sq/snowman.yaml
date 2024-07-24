@@ -1,0 +1,52 @@
+data:
+  type: dataset.ours.Synthetic
+  params:
+    projection: PERSP
+    root: ./data/3doodle
+    scene: bigsnow
+    near: 2.
+    far: 6.
+    white_bkgd: True
+    init_points: True
+    sfm_params:
+      voxel_size: 0.02
+      filter_fn: radius
+      filter_params: [10, 0.2]
+      filter_again: True
+      filter_ratio: 0.03
+
+method:
+  text: snowman
+
+  use_contour: True
+  use_viewdirs: True
+  render_lr: 1.0e-3
+  lr: 1.0e-3
+
+  plot_freq: 1000
+  save_freq: 1000
+  max_iters: 30000
+
+  sq_pre_iters: 5000
+  sq_freeze: True
+
+  curve_params:
+    proj_mode: persp
+    proj_scale: 1.0
+    blender: True
+
+    gap: 0.01
+    center: [0.0, 0.0, 0.0]
+    rand_mode: bbox
+    upside: False
+    boundaries: [0.5, 0.5, 1.0]
+    
+    num_strokes: 32
+
+  sq_params:
+    rendering_type: contour_3doodle_adaptive
+    n_units: 2
+
+    network_params:
+      alpha: [0.5, 1.0]
+      epsilon: [0.8, 1.2]

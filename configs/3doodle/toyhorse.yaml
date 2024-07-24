@@ -1,0 +1,23 @@
+data:
+  type: dataset.ours.Synthetic
+  params:
+    projection: PERSP
+    root: ./data/ours/synthetic
+    scene: toyhorse
+    white_bkgd: True
+
+method:
+  text: the ridable toy horse
+  
+  curve_params:
+    proj_mode: persp
+    proj_scale: 1.0
+    blender: True
+
+    gap: 0.01
+    center: [0.0, 0.0, 0.0]
+    rand_mode: bbox
+    upside: True
+    boundaries: [0.5, 0.5, 1.0]
+
+    num_strokes: 32
